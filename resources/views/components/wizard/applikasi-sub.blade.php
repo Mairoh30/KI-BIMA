@@ -136,7 +136,7 @@
     
             'jualan': {
                 title: 'Jualan',
-                description: 'Platform bagi penjual untuk mengelola toko online, menjual produk, dan mengembangkan bisnis dengan tools yang lengkap.',
+                description: 'Fasilitas Point of Sale (POS) atau yang umum dikenal dengan aplikasi kasir. Di Aplikasi Kedai Indonesia “Jualan” dilengkapi dengan sejumlah fitur tambahan yang memberikan kemudahan bagi pelaku usaha Kedai untuk berjualan secara lebih efisien.',
                 features: ['Manajemen produk', 'Analitik penjualan', 'Integrasi pembayaran', 'Kelola stok otomatis', 'Promosi produk'],
                 image: 'https://placehold.co/600x400'
             },
@@ -629,7 +629,7 @@
 
         <div class="mb-6 flex items-center">
 
-            <div class="mr-4 rounded-full bg-white p-3 shadow-md">
+        <div class="mr-4">
                 <img src="{{ asset('storage/assets_images/images/sub-app/JualanLogo.png') }}"
                     alt="Jualan Logo"
                     class="h-10 w-10 object-contain">
@@ -675,7 +675,7 @@
                         <div>
                             <p class="mb-6 text-gray-700" x-text="appData.jualan.description"></p>
                             <div class="rounded-lg bg-white p-4 shadow-md">
-                                <h4 class="mb-2 font-semibold text-emerald-700">Mengapa memilih Jualan?</h4>
+                                <h4 class="mb-2 font-semibold text-emerald-700">Kelebihan Fitur “Jualan”</h4>
                                 <ul class="space-y-2">
                                     <li class="flex items-start">
                                         <svg class="mr-2 mt-0.5 h-5 w-5 text-emerald-500" fill="none"
@@ -684,8 +684,7 @@
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M5 13l4 4L19 7"></path>
                                         </svg>
-                                        <span class="text-gray-600">Tingkatkan penjualan dengan tools yang mudah
-                                            digunakan</span>
+                                        <span class="text-gray-600">Point of Sale (kasir)</span>
                                     </li>
                                     <li class="flex items-start">
                                         <svg class="mr-2 mt-0.5 h-5 w-5 text-emerald-500" fill="none"
@@ -694,8 +693,7 @@
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M5 13l4 4L19 7"></path>
                                         </svg>
-                                        <span class="text-gray-600">Kelola inventaris dan pesanan dalam satu
-                                            dashboard</span>
+                                        <span class="text-gray-600">PPOB (Payment Point Online Bank), belanja pulsa, e-walet dll</span>
                                     </li>
                                     <li class="flex items-start">
                                         <svg class="mr-2 mt-0.5 h-5 w-5 text-emerald-500" fill="none"
@@ -704,7 +702,52 @@
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M5 13l4 4L19 7"></path>
                                         </svg>
-                                        <span class="text-gray-600">Akses ke jutaan pelanggan potensial</span>
+                                        <span class="text-gray-600">Multy payment methode (cash, QRIS, Transfer dll)</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="mr-2 mt-0.5 h-5 w-5 text-emerald-500" fill="none"
+                                            stroke="currentColor" viewBox="0 0 24 24"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                        <span class="text-gray-600">Terintegrasi dengan manajemen stok retail</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="mr-2 mt-0.5 h-5 w-5 text-emerald-500" fill="none"
+                                            stroke="currentColor" viewBox="0 0 24 24"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                        <span class="text-gray-600">Infak/donasi (kelebihan belanja) terorganisir dan transparan</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="mr-2 mt-0.5 h-5 w-5 text-emerald-500" fill="none"
+                                            stroke="currentColor" viewBox="0 0 24 24"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                        <span class="text-gray-600">Jaminan keananan data</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="mr-2 mt-0.5 h-5 w-5 text-emerald-500" fill="none"
+                                            stroke="currentColor" viewBox="0 0 24 24"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                        <span class="text-gray-600">Terkoneksi dengan sistem pelaporan usaha</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="mr-2 mt-0.5 h-5 w-5 text-emerald-500" fill="none"
+                                            stroke="currentColor" viewBox="0 0 24 24"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                        <span class="text-gray-600">Free pendampingan (jika aplikasi ada kendala)</span>
                                     </li>
                                 </ul>
                             </div>
@@ -716,7 +759,7 @@
                     </div>
 
                     <div x-show="activeTab === 'features'" class="space-y-4">
-                        <h4 class="mb-3 font-semibold text-emerald-700">Fitur Utama:</h4>
+                        <h4 class="mb-3 font-semibold text-emerald-700">Sub Fitur Jualan:</h4>
                         <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
                             <template x-for="feature in appData.jualan.features">
                                 <div class="rounded-lg bg-white p-4 shadow-md">
@@ -757,12 +800,12 @@
                     <div class="mt-8 text-center">
                         <a href="#"
                             class="inline-flex items-center rounded-lg bg-emerald-600 px-6 py-3 font-medium text-white transition-colors hover:bg-emerald-700">
-                            Mulai Jualan Sekarang
-                            <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            Selengkapnya
+                            <!-- <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                            </svg>
+                            </svg> -->
                         </a>
                     </div>
                 </div>
@@ -778,7 +821,7 @@
         <!-- Header -->
         <div class="mb-6 flex items-center">
 
-            <div class="mr-4 rounded-full bg-white p-3 shadow-md">
+            <div class="mr-4">
                 <img src="{{ asset('storage/assets_images/images/sub-app/LaporanLogo.png') }}"
                     alt="Laporan Logo"
                     class="h-10 w-10 object-contain">
@@ -928,7 +971,7 @@
             class="space-y-4">
 
             <h4 class="mb-3 font-semibold text-amber-700">
-                Fitur Utama
+                Sub Fitur Laporan:
             </h4>
 
             <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -1220,7 +1263,7 @@
 
         <!-- Header -->
         <div class="mb-6 flex items-center">
-            <div class="mr-4 rounded-full bg-white p-3 shadow-md">
+            <div class="mr-4">
                 <img src="{{ asset('storage/assets_images/images/sub-app/AnalisisLogo.png') }}"
                      alt="Analisis Logo"
                      class="h-10 w-10 object-contain">
@@ -1363,7 +1406,7 @@
              class="space-y-4">
 
             <h4 class="mb-3 font-semibold text-purple-700">
-                Fitur Utama Analisis
+                Sub Fitur Analisis:
             </h4>
 
             <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -1495,7 +1538,6 @@
 
 </div>
 
-            <!-- Komunitas Section -->
            <!-- Komunitas Section -->
 <div x-show="activeApp === 'komunitas'"
      x-data="{ activeTab: 'overview' }"
@@ -1505,7 +1547,7 @@
 
         <!-- Header -->
         <div class="mb-6 flex items-center">
-            <div class="mr-4 rounded-full bg-white p-3 shadow-md">
+            <div class="mr-4">
                 <img src="{{ asset('storage/assets_images/images/sub-app/KomunitasLogo.png') }}"
                     alt="Komunitas Logo"
                     class="h-10 w-10 object-contain">
@@ -1647,7 +1689,7 @@
              class="space-y-4">
 
             <h4 class="mb-3 font-semibold text-rose-700">
-                Fitur Utama Komunitas
+                Sub Fitur Komunitas:
             </h4>
 
             <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -1792,7 +1834,7 @@
 
         <!-- Header -->
         <div class="mb-6 flex items-center">
-            <div class="mr-4 rounded-full bg-white p-3 shadow-md">
+            <div class="mr-4">
                 <img src="{{ asset('storage/assets_images/images/sub-app/InformasiLogo.png') }}"
                     alt="Informasi Logo"
                     class="h-10 w-10 object-contain">
@@ -1941,7 +1983,7 @@
             class="space-y-4">
 
             <h4 class="mb-3 font-semibold text-sky-700">
-                Fitur Informasi
+                Sub Fitur Informasi:
             </h4>
 
             <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
