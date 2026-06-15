@@ -398,6 +398,15 @@ route::get('/produk', function () {
     return view('guest.produk');
 })->name('guest.produk');
 
+Route::get('/belanja', function () {
+    return view('guest.belanja');
+})->name('belanja');
+
+// Tambahkan ini di routes/web.php
+Route::get('/layanan/jualan-detail', function () {
+    return view('guest.jualan_detail'); // Mengarah ke file blade baru yang akan kita buat
+})->name('jualan.detail');
+
 // Information Routes
 Route::get('/information', function () {
     return view('guest.information.index');

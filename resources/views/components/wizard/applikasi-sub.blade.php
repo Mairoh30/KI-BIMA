@@ -506,6 +506,7 @@
             </button> --}}
 
             <div x-show="activeApp === 'belanja'"
+    x-data="{ activeTab: 'overview' }"
     class="overflow-hidden rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200">
     <!-- Header Belanja -->
 <!-- <div class="border-b border-gray-300 bg-white/70 px-8 py-6 backdrop-blur-sm">
@@ -532,8 +533,128 @@
 
     </div>
 </div> -->
-    <div class="p-8 md:p-12 mx-auto max-w-7xl space-y-16 md:space-y-24">
-        
+<div class="p-8">
+
+    <!-- Header -->
+    <div class="mb-6 flex items-center">
+
+        <div class="mr-4">
+            <img src="{{ asset('storage/assets_images/images/sub-app/BelanjaLogo.png') }}"
+                alt="Belanja Logo"
+                class="h-10 w-10 object-contain">
+        </div>
+
+        <h3 class="text-2xl font-bold text-blue-800">
+            Belanja
+        </h3>
+
+    </div>
+
+    <!-- Tabs -->
+    <div class="mb-6 border-b border-gray-200">
+        <ul class="-mb-px flex flex-wrap">
+
+            <li class="mr-2">
+                <button @click="activeTab = 'overview'"
+                    :class="activeTab === 'overview'
+                    ? 'text-blue-600 border-b-2 border-blue-600'
+                    : 'text-gray-500'"
+                    class="inline-block p-4 font-medium">
+                    Overview
+                </button>
+            </li>
+
+            <li class="mr-2">
+                <button @click="activeTab = 'features'"
+                    :class="activeTab === 'features'
+                    ? 'text-blue-600 border-b-2 border-blue-600'
+                    : 'text-gray-500'"
+                    class="inline-block p-4 font-medium">
+                    Fitur
+                </button>
+            </li>
+
+            <li>
+                <button @click="activeTab = 'demo'"
+                    :class="activeTab === 'demo'
+                    ? 'text-blue-600 border-b-2 border-blue-600'
+                    : 'text-gray-500'"
+                    class="inline-block p-4 font-medium">
+                    Demo
+                </button>
+            </li>
+
+        </ul>
+    </div>
+
+    <div x-show="activeTab === 'overview'" class="grid md:grid-cols-2 gap-8">
+
+<div>
+    <p class="mb-6 text-gray-700">
+        Fitur Belanja membantu mitra melakukan restocking barang,
+        memperoleh rekomendasi pembelian berbasis AI,
+        menggunakan fasilitas kredit syariah,
+        melakukan pembayaran digital,
+        serta memantau perkembangan usaha melalui laporan yang lengkap.
+    </p>
+
+    <div class="rounded-lg bg-white p-6 shadow-md">
+        <h4 class="mb-4 font-semibold text-blue-700 text-lg">
+            Kelebihan Fitur Belanja
+        </h4>
+
+        <div class="space-y-4">
+            <div class="flex items-center gap-3">
+            <div class="mr-3 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-700">
+    <i class="fas fa-check text-xs"></i>
+</div>
+                <span class="text-gray-700 font-medium">Belanja Mandiri</span>
+            </div>
+
+            <div class="flex items-center gap-3">
+            <div class="mr-3 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-700">
+    <i class="fas fa-check text-xs"></i>
+</div>
+                <span class="text-gray-700 font-medium">Belanja Cepat berbasis AI</span>
+            </div>
+
+            <div class="flex items-center gap-3">
+            <div class="mr-3 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-700">
+    <i class="fas fa-check text-xs"></i>
+</div>
+                <span class="text-gray-700 font-medium">Pakai Dulu (Kredit Syariah)</span>
+            </div>
+
+            <div class="flex items-center gap-3">
+            <div class="mr-3 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-700">
+    <i class="fas fa-check text-xs"></i>
+</div>
+                <span class="text-gray-700 font-medium">Pembayaran Digital</span>
+            </div>
+
+            <div class="flex items-center gap-3">
+            <div class="mr-3 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-700">
+    <i class="fas fa-check text-xs"></i>
+</div>
+                <span class="text-gray-700 font-medium">Laporan Usaha Terintegrasi</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="flex items-center justify-center">
+    <img src="https://placehold.co/600x400"
+        alt="Belanja"
+        class="max-h-80 rounded-lg shadow-lg">
+</div>
+
+</div>
+
+    <!-- FITUR -->
+    <!-- <div x-show="activeTab === 'features'">
+
+<div class="space-y-16 md:space-y-24">        
         <div class="grid md:grid-cols-2 gap-8 items-center">
             <div class="flex justify-center md:justify-start">
                 <img src="{{ asset('storage/assets_images/images/barangki.png') }}" alt="Belanja Mandiri"
@@ -618,11 +739,142 @@
             </div>
         </div>
 
+        </div>
+</div> -->
+
+<div x-show="activeTab === 'features'" class="space-y-4">
+
+    <h4 class="mb-3 font-semibold text-blue-700">
+        Sub Fitur Belanja:
+    </h4>
+
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+
+        <div class="rounded-lg bg-white p-4 shadow-md">
+            <div class="flex items-center">
+            <div class="mr-3 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-700">
+    <i class="fas fa-check text-xs"></i>
+</div>
+                <h5 class="font-medium text-gray-800">
+                    Belanja Mandiri
+                </h5>
+            </div>
+        </div>
+
+        <div class="rounded-lg bg-white p-4 shadow-md">
+            <div class="flex items-center">
+            <div class="mr-3 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-700">
+    <i class="fas fa-check text-xs"></i>
+</div>
+                <h5 class="font-medium text-gray-800">
+                    Belanja Cepat (AI)
+                </h5>
+            </div>
+        </div>
+
+        <div class="rounded-lg bg-white p-4 shadow-md">
+            <div class="flex items-center">
+            <div class="mr-3 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-700">
+    <i class="fas fa-check text-xs"></i>
+</div>
+                <h5 class="font-medium text-gray-800">
+                    Pakai Dulu (Kredit Syariah)
+                </h5>
+            </div>
+        </div>
+
+        <div class="rounded-lg bg-white p-4 shadow-md">
+            <div class="flex items-center">
+            <div class="mr-3 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-700">
+    <i class="fas fa-check text-xs"></i>
+</div>
+                <h5 class="font-medium text-gray-800">
+                    Pembayaran Digital
+                </h5>
+            </div>
+        </div>
+
+        <div class="rounded-lg bg-white p-4 shadow-md">
+            <div class="flex items-center">
+            <div class="mr-3 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-700">
+    <i class="fas fa-check text-xs"></i>
+</div>
+                <h5 class="font-medium text-gray-800">
+                    Laporan Usaha
+                </h5>
+            </div>
+        </div>
+
+        <div class="rounded-lg bg-white p-4 shadow-md">
+            <div class="flex items-center">
+            <div class="mr-3 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-700">
+    <i class="fas fa-check text-xs"></i>
+</div>
+                <h5 class="font-medium text-gray-800">
+                    Analisis Stok Otomatis
+                </h5>
+            </div>
+        </div>
+
     </div>
+
+</div>
 </div>
 
+<!-- DEMO -->
+<div x-show="activeTab === 'demo'"
+    class="flex flex-col items-center">
+
+    <div class="w-full max-w-2xl rounded-lg bg-white p-6 shadow-lg">
+
+        <h4 class="mb-4 text-center font-semibold text-blue-700">
+            Demo Platform Belanja
+        </h4>
+
+        <div
+            class="mb-4 flex h-64 items-center justify-center rounded-lg bg-gray-200">
+
+            <svg class="h-16 w-16 text-gray-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24">
+
+                <path stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z">
+                </path>
+
+                <path stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                </path>
+
+            </svg>
+
+        </div>
+
+        <p class="text-center text-gray-600">
+            Klik untuk melihat demo platform Belanja dalam aksi
+        </p>
+
+    </div>
+
+</div>
+<!-- BUTTON -->
+<div class="mt-8 mb-16 text-center">
+    <a href="{{ route('belanja') }}"
+        class="inline-flex items-center rounded-lg bg-blue-600 px-6 py-3 font-medium text-white transition-colors hover:bg-blue-700">
+        Selengkapnya
+    </a>
+</div>
+    
+</div>
+
+
            <!-- Jualan Section -->
-<div x-show="activeApp === 'jualan'" x-data="{ activeTab: 'overview' }"
+           <div x-show="activeApp === 'jualan'" x-data="{ activeTab: 'overview' }"
     class="overflow-hidden rounded-2xl bg-gradient-to-br from-green-50 to-emerald-50 shadow-xl">
 
     <div class="p-8">
@@ -641,9 +893,6 @@
 
         </div>
 
-        <!-- Tabs -->
-
-                    <!-- Tabs -->
                     <div class="mb-6 border-b border-gray-200">
                         <ul class="-mb-px flex flex-wrap">
                             <li class="mr-2">
@@ -670,86 +919,61 @@
                         </ul>
                     </div>
 
-                    <!-- Tab content -->
                     <div x-show="activeTab === 'overview'" class="grid grid-cols-1 gap-8 md:grid-cols-2">
                         <div>
                             <p class="mb-6 text-gray-700" x-text="appData.jualan.description"></p>
-                            <div class="rounded-lg bg-white p-4 shadow-md">
-                                <h4 class="mb-2 font-semibold text-emerald-700">Kelebihan Fitur “Jualan”</h4>
-                                <ul class="space-y-2">
-                                    <li class="flex items-start">
-                                        <svg class="mr-2 mt-0.5 h-5 w-5 text-emerald-500" fill="none"
-                                            stroke="currentColor" viewBox="0 0 24 24"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M5 13l4 4L19 7"></path>
-                                        </svg>
-                                        <span class="text-gray-600">Point of Sale (kasir)</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <svg class="mr-2 mt-0.5 h-5 w-5 text-emerald-500" fill="none"
-                                            stroke="currentColor" viewBox="0 0 24 24"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M5 13l4 4L19 7"></path>
-                                        </svg>
-                                        <span class="text-gray-600">PPOB (Payment Point Online Bank), belanja pulsa, e-walet dll</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <svg class="mr-2 mt-0.5 h-5 w-5 text-emerald-500" fill="none"
-                                            stroke="currentColor" viewBox="0 0 24 24"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M5 13l4 4L19 7"></path>
-                                        </svg>
-                                        <span class="text-gray-600">Multy payment methode (cash, QRIS, Transfer dll)</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <svg class="mr-2 mt-0.5 h-5 w-5 text-emerald-500" fill="none"
-                                            stroke="currentColor" viewBox="0 0 24 24"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M5 13l4 4L19 7"></path>
-                                        </svg>
-                                        <span class="text-gray-600">Terintegrasi dengan manajemen stok retail</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <svg class="mr-2 mt-0.5 h-5 w-5 text-emerald-500" fill="none"
-                                            stroke="currentColor" viewBox="0 0 24 24"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M5 13l4 4L19 7"></path>
-                                        </svg>
-                                        <span class="text-gray-600">Infak/donasi (kelebihan belanja) terorganisir dan transparan</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <svg class="mr-2 mt-0.5 h-5 w-5 text-emerald-500" fill="none"
-                                            stroke="currentColor" viewBox="0 0 24 24"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M5 13l4 4L19 7"></path>
-                                        </svg>
-                                        <span class="text-gray-600">Jaminan keamanan data</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <svg class="mr-2 mt-0.5 h-5 w-5 text-emerald-500" fill="none"
-                                            stroke="currentColor" viewBox="0 0 24 24"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M5 13l4 4L19 7"></path>
-                                        </svg>
-                                        <span class="text-gray-600">Terkoneksi dengan sistem pelaporan usaha</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <svg class="mr-2 mt-0.5 h-5 w-5 text-emerald-500" fill="none"
-                                            stroke="currentColor" viewBox="0 0 24 24"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M5 13l4 4L19 7"></path>
-                                        </svg>
-                                        <span class="text-gray-600">Free pendampingan (jika aplikasi ada kendala)</span>
-                                    </li>
-                                </ul>
+                            <div class="rounded-lg bg-white p-6 shadow-md">
+                                <h4 class="mb-4 font-semibold text-emerald-700 text-lg">Kelebihan Fitur “Jualan”</h4>
+                                <div class="space-y-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                                            <i class="fas fa-check text-xs"></i>
+                                        </div>
+                                        <span class="text-gray-600 font-medium">Point of Sale (kasir)</span>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <div class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                                            <i class="fas fa-check text-xs"></i>
+                                        </div>
+                                        <span class="text-gray-600 font-medium">PPOB (Payment Point Online Bank), belanja pulsa, e-walet dll</span>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <div class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                                            <i class="fas fa-check text-xs"></i>
+                                        </div>
+                                        <span class="text-gray-600 font-medium">Multy payment methode (cash, QRIS, Transfer dll)</span>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <div class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                                            <i class="fas fa-check text-xs"></i>
+                                        </div>
+                                        <span class="text-gray-600 font-medium">Terintegrasi dengan manajemen stok retail</span>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <div class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                                            <i class="fas fa-check text-xs"></i>
+                                        </div>
+                                        <span class="text-gray-600 font-medium">Infak/donasi (kelebihan belanja) terorganisir dan transparan</span>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <div class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                                            <i class="fas fa-check text-xs"></i>
+                                        </div>
+                                        <span class="text-gray-600 font-medium">Jaminan keamanan data</span>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <div class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                                            <i class="fas fa-check text-xs"></i>
+                                        </div>
+                                        <span class="text-gray-600 font-medium">Terkoneksi dengan sistem pelaporan usaha</span>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <div class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                                            <i class="fas fa-check text-xs"></i>
+                                        </div>
+                                        <span class="text-gray-600 font-medium">Free pendampingan (jika aplikasi ada kendala)</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="flex items-center justify-center">
@@ -764,13 +988,8 @@
                             <template x-for="feature in appData.jualan.features">
                                 <div class="rounded-lg bg-white p-4 shadow-md">
                                     <div class="flex items-center">
-                                        <div class="mr-3 rounded-md bg-emerald-100 p-2">
-                                            <svg class="h-5 w-5 text-emerald-600" fill="none"
-                                                stroke="currentColor" viewBox="0 0 24 24"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                            </svg>
+                                        <div class="mr-3 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                                            <i class="fas fa-check text-xs"></i>
                                         </div>
                                         <h5 class="font-medium text-gray-800" x-text="feature"></h5>
                                     </div>
@@ -798,7 +1017,7 @@
                     </div>
 
                     <div class="mt-8 text-center">
-                        <a href="#"
+                        <a href="{{ route('jualan.detail') }}"
                             class="inline-flex items-center rounded-lg bg-emerald-600 px-6 py-3 font-medium text-white transition-colors hover:bg-emerald-700">
                             Selengkapnya
                             <!-- <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -806,19 +1025,19 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                             </svg> -->
-                        </a>
+                            </a>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Laporan Section -->
-            <div x-show="activeApp === 'laporan'"
+<!-- laporan section -->
+        <div x-show="activeApp === 'laporan'"
     x-data="{ activeTab: 'overview' }"
     class="overflow-hidden rounded-2xl bg-gradient-to-br from-amber-50 to-yellow-50 shadow-xl">
 
     <div class="p-8">
 
-        <!-- Header -->
         <div class="mb-6 flex items-center">
 
             <div class="mr-4">
@@ -833,7 +1052,6 @@
 
         </div>
 
-        <!-- Tabs -->
         <div class="mb-6 border-b border-gray-200">
             <ul class="-mb-px flex flex-wrap">
 
@@ -882,7 +1100,6 @@
             </ul>
         </div>
 
-        <!-- OVERVIEW -->
         <div x-show="activeTab === 'overview'"
             class="grid grid-cols-1 gap-8 md:grid-cols-2">
 
@@ -894,63 +1111,42 @@
                     yang telah dipublikasikan oleh Kedai Indonesia.
                 </p>
 
-                <div class="rounded-lg bg-white p-4 shadow-md">
+                <div class="rounded-lg bg-white p-6 shadow-md">
 
-                    <h4 class="mb-2 font-semibold text-amber-700">
+                    <h4 class="mb-4 font-semibold text-amber-700 text-lg">
                         Mengapa memilih Laporan?
                     </h4>
 
-                    <ul class="space-y-2">
+                    <div class="space-y-4">
 
-                        <li class="flex items-start">
-                            <svg class="mr-2 mt-0.5 h-5 w-5 text-amber-500"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M5 13l4 4L19 7"></path>
-                            </svg>
-
-                            <span class="text-gray-600">
+                        <div class="flex items-center gap-3">
+                            <div class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-700">
+                                <i class="fas fa-check text-xs"></i>
+                            </div>
+                            <span class="text-gray-600 font-medium">
                                 Melihat laporan kegiatan dan program terbaru.
                             </span>
-                        </li>
+                        </div>
 
-                        <li class="flex items-start">
-                            <svg class="mr-2 mt-0.5 h-5 w-5 text-amber-500"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M5 13l4 4L19 7"></path>
-                            </svg>
-
-                            <span class="text-gray-600">
+                        <div class="flex items-center gap-3">
+                            <div class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-700">
+                                <i class="fas fa-check text-xs"></i>
+                            </div>
+                            <span class="text-gray-600 font-medium">
                                 Akses dokumentasi kegiatan secara mudah.
                             </span>
-                        </li>
+                        </div>
 
-                        <li class="flex items-start">
-                            <svg class="mr-2 mt-0.5 h-5 w-5 text-amber-500"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M5 13l4 4L19 7"></path>
-                            </svg>
-
-                            <span class="text-gray-600">
+                        <div class="flex items-center gap-3">
+                            <div class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-700">
+                                <i class="fas fa-check text-xs"></i>
+                            </div>
+                            <span class="text-gray-600 font-medium">
                                 Mengetahui perkembangan program dan hasil kegiatan.
                             </span>
-                        </li>
+                        </div>
 
-                    </ul>
+                    </div>
 
                 </div>
 
@@ -966,7 +1162,6 @@
 
         </div>
 
-        <!-- FITUR -->
         <div x-show="activeTab === 'features'"
             class="space-y-4">
 
@@ -979,16 +1174,8 @@
                 <div class="rounded-lg bg-white p-4 shadow-md">
                     <div class="flex items-center">
 
-                        <div class="mr-3 rounded-md bg-amber-100 p-2">
-                            <svg class="h-5 w-5 text-amber-600"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M9 12l2 2 4-4"></path>
-                            </svg>
+                        <div class="mr-3 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-700">
+                            <i class="fas fa-check text-xs"></i>
                         </div>
 
                         <h5 class="font-medium text-gray-800">
@@ -1001,16 +1188,8 @@
                 <div class="rounded-lg bg-white p-4 shadow-md">
                     <div class="flex items-center">
 
-                        <div class="mr-3 rounded-md bg-amber-100 p-2">
-                            <svg class="h-5 w-5 text-amber-600"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M9 12l2 2 4-4"></path>
-                            </svg>
+                        <div class="mr-3 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-700">
+                            <i class="fas fa-check text-xs"></i>
                         </div>
 
                         <h5 class="font-medium text-gray-800">
@@ -1023,16 +1202,8 @@
                 <div class="rounded-lg bg-white p-4 shadow-md">
                     <div class="flex items-center">
 
-                        <div class="mr-3 rounded-md bg-amber-100 p-2">
-                            <svg class="h-5 w-5 text-amber-600"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M9 12l2 2 4-4"></path>
-                            </svg>
+                        <div class="mr-3 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-700">
+                            <i class="fas fa-check text-xs"></i>
                         </div>
 
                         <h5 class="font-medium text-gray-800">
@@ -1045,16 +1216,8 @@
                 <div class="rounded-lg bg-white p-4 shadow-md">
                     <div class="flex items-center">
 
-                        <div class="mr-3 rounded-md bg-amber-100 p-2">
-                            <svg class="h-5 w-5 text-amber-600"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M9 12l2 2 4-4"></path>
-                            </svg>
+                        <div class="mr-3 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-700">
+                            <i class="fas fa-check text-xs"></i>
                         </div>
 
                         <h5 class="font-medium text-gray-800">
@@ -1068,7 +1231,6 @@
 
         </div>
 
-        <!-- DEMO -->
         <div x-show="activeTab === 'demo'"
             class="flex flex-col items-center">
 
@@ -1109,7 +1271,6 @@
 
         </div>
 
-        <!-- BUTTON -->
         <div class="mt-8 text-center">
 
             <a href="#"
@@ -1329,63 +1490,42 @@
                     keputusan yang lebih tepat.
                 </p>
 
-                <div class="rounded-lg bg-white p-4 shadow-md">
+                <div class="rounded-lg bg-white p-6 shadow-md">
 
-                    <h4 class="mb-2 font-semibold text-purple-700">
-                        Mengapa memilih Analisis?
+                    <h4 class="mb-4 font-semibold text-purple-700 text-lg">
+                        Mengapa memilih Laporan?
                     </h4>
 
-                    <ul class="space-y-2">
+                    <div class="space-y-4">
 
-                        <li class="flex items-start">
-                            <svg class="mr-2 mt-0.5 h-5 w-5 text-purple-500"
-                                 fill="none"
-                                 stroke="currentColor"
-                                 viewBox="0 0 24 24">
-                                <path stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      stroke-width="2"
-                                      d="M5 13l4 4L19 7"></path>
-                            </svg>
-
-                            <span class="text-gray-600">
+                        <div class="flex items-center gap-3">
+                            <div class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-purple-100 text-purple-700">
+                                <i class="fas fa-check text-xs"></i>
+                            </div>
+                            <span class="text-gray-600 font-medium">
                                 Memantau perkembangan bisnis secara real-time.
                             </span>
-                        </li>
+                        </div>
 
-                        <li class="flex items-start">
-                            <svg class="mr-2 mt-0.5 h-5 w-5 text-purple-500"
-                                 fill="none"
-                                 stroke="currentColor"
-                                 viewBox="0 0 24 24">
-                                <path stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      stroke-width="2"
-                                      d="M5 13l4 4L19 7"></path>
-                            </svg>
-
-                            <span class="text-gray-600">
+                        <div class="flex items-center gap-3">
+                            <div class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-purple-100 text-purple-700">
+                                <i class="fas fa-check text-xs"></i>
+                            </div>
+                            <span class="text-gray-600 font-medium">
                                 Mengetahui produk paling laris dan paling lambat terjual.
                             </span>
-                        </li>
+                        </div>
 
-                        <li class="flex items-start">
-                            <svg class="mr-2 mt-0.5 h-5 w-5 text-purple-500"
-                                 fill="none"
-                                 stroke="currentColor"
-                                 viewBox="0 0 24 24">
-                                <path stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      stroke-width="2"
-                                      d="M5 13l4 4L19 7"></path>
-                            </svg>
-
-                            <span class="text-gray-600">
+                        <div class="flex items-center gap-3">
+                            <div class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-purple-100 text-purple-700">
+                                <i class="fas fa-check text-xs"></i>
+                            </div>
+                            <span class="text-gray-600 font-medium">
                                 Membantu menentukan strategi bisnis berdasarkan data.
                             </span>
-                        </li>
+                        </div>
 
-                    </ul>
+                    </div>
 
                 </div>
 
@@ -1393,7 +1533,7 @@
 
             <div class="flex items-center justify-center">
 
-            <img src="https://placehold.co/600x400"
+                <img src="https://placehold.co/600x400"
                      alt="Analisis"
                      class="max-h-80 rounded-lg object-contain shadow-lg">
 
@@ -1413,8 +1553,8 @@
 
                 <div class="rounded-lg bg-white p-4 shadow-md">
                     <div class="flex items-center">
-                        <div class="mr-3 rounded-md bg-purple-100 p-2">
-                            📊
+                        <div class="mr-3 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-purple-100 text-purple-700">
+                            <i class="fas fa-check text-xs"></i>
                         </div>
                         <h5 class="font-medium text-gray-800">
                             Analisis Penjualan
@@ -1424,8 +1564,8 @@
 
                 <div class="rounded-lg bg-white p-4 shadow-md">
                     <div class="flex items-center">
-                        <div class="mr-3 rounded-md bg-purple-100 p-2">
-                            📈
+                        <div class="mr-3 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-purple-100 text-purple-700">
+                            <i class="fas fa-check text-xs"></i>
                         </div>
                         <h5 class="font-medium text-gray-800">
                             Grafik Performa Bisnis
@@ -1435,8 +1575,8 @@
 
                 <div class="rounded-lg bg-white p-4 shadow-md">
                     <div class="flex items-center">
-                        <div class="mr-3 rounded-md bg-purple-100 p-2">
-                            🛒
+                        <div class="mr-3 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-purple-100 text-purple-700">
+                            <i class="fas fa-check text-xs"></i>
                         </div>
                         <h5 class="font-medium text-gray-800">
                             Analisis Produk Terlaris
@@ -1446,8 +1586,8 @@
 
                 <div class="rounded-lg bg-white p-4 shadow-md">
                     <div class="flex items-center">
-                        <div class="mr-3 rounded-md bg-purple-100 p-2">
-                            📦
+                        <div class="mr-3 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-purple-100 text-purple-700">
+                            <i class="fas fa-check text-xs"></i>
                         </div>
                         <h5 class="font-medium text-gray-800">
                             Monitoring Stok Barang
@@ -1457,8 +1597,8 @@
 
                 <div class="rounded-lg bg-white p-4 shadow-md">
                     <div class="flex items-center">
-                        <div class="mr-3 rounded-md bg-purple-100 p-2">
-                            👥
+                        <div class="mr-3 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-purple-100 text-purple-700">
+                            <i class="fas fa-check text-xs"></i>
                         </div>
                         <h5 class="font-medium text-gray-800">
                             Analisis Pelanggan
@@ -1468,8 +1608,8 @@
 
                 <div class="rounded-lg bg-white p-4 shadow-md">
                     <div class="flex items-center">
-                        <div class="mr-3 rounded-md bg-purple-100 p-2">
-                            🤖
+                        <div class="mr-3 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-purple-100 text-purple-700">
+                            <i class="fas fa-check text-xs"></i>
                         </div>
                         <h5 class="font-medium text-gray-800">
                             Rekomendasi Berbasis Data
@@ -1538,7 +1678,7 @@
 
 </div>
 
-           <!-- Komunitas Section -->
+          <!-- Komunitas Section -->
 <div x-show="activeApp === 'komunitas'"
      x-data="{ activeTab: 'overview' }"
      class="overflow-hidden rounded-2xl bg-gradient-to-br from-rose-50 to-red-50 shadow-xl">
@@ -1612,63 +1752,42 @@
                     meningkatkan kemampuan bisnis secara bersama-sama.
                 </p>
 
-                <div class="rounded-lg bg-white p-4 shadow-md">
+                <div class="rounded-lg bg-white p-6 shadow-md">
 
-                    <h4 class="mb-2 font-semibold text-rose-700">
+                    <h4 class="mb-4 font-semibold text-rose-700 text-lg">
                         Mengapa Bergabung dengan Komunitas?
                     </h4>
 
-                    <ul class="space-y-2">
+                    <div class="space-y-4">
 
-                        <li class="flex items-start">
-                            <svg class="mr-2 mt-0.5 h-5 w-5 text-rose-500"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M5 13l4 4L19 7"></path>
-                            </svg>
-
-                            <span class="text-gray-600">
+                        <div class="flex items-center gap-3">
+                            <div class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-rose-100 text-rose-700">
+                                <i class="fas fa-check text-xs"></i>
+                            </div>
+                            <span class="text-gray-600 font-medium">
                                 Berinteraksi dengan sesama pelaku usaha.
                             </span>
-                        </li>
+                        </div>
 
-                        <li class="flex items-start">
-                            <svg class="mr-2 mt-0.5 h-5 w-5 text-rose-500"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M5 13l4 4L19 7"></path>
-                            </svg>
-
-                            <span class="text-gray-600">
+                        <div class="flex items-center gap-3">
+                            <div class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-rose-100 text-rose-700">
+                                <i class="fas fa-check text-xs"></i>
+                            </div>
+                            <span class="text-gray-600 font-medium">
                                 Mendapatkan informasi dan peluang bisnis terbaru.
                             </span>
-                        </li>
+                        </div>
 
-                        <li class="flex items-start">
-                            <svg class="mr-2 mt-0.5 h-5 w-5 text-rose-500"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M5 13l4 4L19 7"></path>
-                            </svg>
-
-                            <span class="text-gray-600">
+                        <div class="flex items-center gap-3">
+                            <div class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-rose-100 text-rose-700">
+                                <i class="fas fa-check text-xs"></i>
+                            </div>
+                            <span class="text-gray-600 font-medium">
                                 Belajar langsung dari pengalaman anggota lain.
                             </span>
-                        </li>
+                        </div>
 
-                    </ul>
+                    </div>
 
                 </div>
 
@@ -1676,7 +1795,7 @@
 
             <div class="flex items-center justify-center">
 
-            <img src="https://placehold.co/600x400"
+                <img src="https://placehold.co/600x400"
                     alt="Komunitas"
                     class="max-h-80 rounded-lg object-contain shadow-lg">
 
@@ -1696,8 +1815,8 @@
 
                 <div class="rounded-lg bg-white p-4 shadow-md">
                     <div class="flex items-center">
-                        <div class="mr-3 rounded-md bg-rose-100 p-2">
-                            👥
+                        <div class="mr-3 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-rose-100 text-rose-700">
+                            <i class="fas fa-check text-xs"></i>
                         </div>
                         <h5 class="font-medium text-gray-800">
                             Forum Diskusi
@@ -1707,8 +1826,8 @@
 
                 <div class="rounded-lg bg-white p-4 shadow-md">
                     <div class="flex items-center">
-                        <div class="mr-3 rounded-md bg-rose-100 p-2">
-                            📅
+                        <div class="mr-3 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-rose-100 text-rose-700">
+                            <i class="fas fa-check text-xs"></i>
                         </div>
                         <h5 class="font-medium text-gray-800">
                             Event & Webinar
@@ -1718,8 +1837,8 @@
 
                 <div class="rounded-lg bg-white p-4 shadow-md">
                     <div class="flex items-center">
-                        <div class="mr-3 rounded-md bg-rose-100 p-2">
-                            🎓
+                        <div class="mr-3 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-rose-100 text-rose-700">
+                            <i class="fas fa-check text-xs"></i>
                         </div>
                         <h5 class="font-medium text-gray-800">
                             Materi Pembelajaran
@@ -1729,8 +1848,8 @@
 
                 <div class="rounded-lg bg-white p-4 shadow-md">
                     <div class="flex items-center">
-                        <div class="mr-3 rounded-md bg-rose-100 p-2">
-                            🤝
+                        <div class="mr-3 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-rose-100 text-rose-700">
+                            <i class="fas fa-check text-xs"></i>
                         </div>
                         <h5 class="font-medium text-gray-800">
                             Networking Bisnis
@@ -1740,8 +1859,8 @@
 
                 <div class="rounded-lg bg-white p-4 shadow-md">
                     <div class="flex items-center">
-                        <div class="mr-3 rounded-md bg-rose-100 p-2">
-                            💬
+                        <div class="mr-3 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-rose-100 text-rose-700">
+                            <i class="fas fa-check text-xs"></i>
                         </div>
                         <h5 class="font-medium text-gray-800">
                             Tanya Jawab dengan Ahli
@@ -1751,8 +1870,8 @@
 
                 <div class="rounded-lg bg-white p-4 shadow-md">
                     <div class="flex items-center">
-                        <div class="mr-3 rounded-md bg-rose-100 p-2">
-                            🚀
+                        <div class="mr-3 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-rose-100 text-rose-700">
+                            <i class="fas fa-check text-xs"></i>
                         </div>
                         <h5 class="font-medium text-gray-800">
                             Kolaborasi Antar Mitra
@@ -1826,9 +1945,9 @@
     class="overflow-hidden rounded-2xl bg-gradient-to-br from-sky-50 to-blue-50 shadow-xl"> -->
 
     <!-- Informasi Section -->
-    <div x-show="activeApp === 'informasi'"
-    x-data="{ activeTab: 'overview' }"
-    class="overflow-hidden rounded-2xl bg-gradient-to-br from-sky-50 to-blue-50 shadow-xl">
+<div x-show="activeApp === 'informasi'"
+     x-data="{ activeTab: 'overview' }"
+     class="overflow-hidden rounded-2xl bg-gradient-to-br from-sky-50 to-blue-50 shadow-xl">
 
     <div class="p-8">
 
@@ -1849,8 +1968,7 @@
         <div class="mb-6 border-b border-gray-200">
             <ul class="-mb-px flex flex-wrap">
                 <li class="mr-2">
-                    <button
-                        @click="activeTab = 'overview'"
+                    <button @click="activeTab = 'overview'"
                         :class="activeTab === 'overview'
                             ? 'border-b-2 border-sky-600 text-sky-600'
                             : 'text-gray-500 hover:text-sky-600'"
@@ -1860,8 +1978,7 @@
                 </li>
 
                 <li class="mr-2">
-                    <button
-                        @click="activeTab = 'features'"
+                    <button @click="activeTab = 'features'"
                         :class="activeTab === 'features'
                             ? 'border-b-2 border-sky-600 text-sky-600'
                             : 'text-gray-500 hover:text-sky-600'"
@@ -1871,8 +1988,7 @@
                 </li>
 
                 <li class="mr-2">
-                    <button
-                        @click="activeTab = 'demo'"
+                    <button @click="activeTab = 'demo'"
                         :class="activeTab === 'demo'
                             ? 'border-b-2 border-sky-600 text-sky-600'
                             : 'text-gray-500 hover:text-sky-600'"
@@ -1885,89 +2001,57 @@
 
         <!-- OVERVIEW -->
         <div x-show="activeTab === 'overview'"
-            class="grid grid-cols-1 gap-8 md:grid-cols-2">
+             class="grid grid-cols-1 gap-8 md:grid-cols-2">
 
             <div>
                 <p class="mb-6 text-gray-700"
                     x-text="appData.informasi.description">
                 </p>
 
-                <div class="rounded-lg bg-white p-4 shadow-md">
-                    <h4 class="mb-3 font-semibold text-sky-700">
+                <div class="rounded-lg bg-white p-6 shadow-md">
+                    <h4 class="mb-4 text-lg font-semibold text-sky-700">
                         Mengapa Memilih Informasi?
                     </h4>
 
-                    <ul class="space-y-3">
+                    <div class="space-y-4">
 
-                        <li class="flex items-start">
-                            <svg class="mr-2 mt-0.5 h-5 w-5 text-sky-500"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M5 13l4 4L19 7">
-                                </path>
-                            </svg>
-
+                        <div class="flex items-center gap-3">
+                            <div class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-sky-100 text-sky-700">
+                                <i class="fas fa-check text-xs"></i>
+                            </div>
                             <span class="text-gray-700">
                                 Update terbaru mengenai program dan layanan Kedai Indonesia.
                             </span>
-                        </li>
+                        </div>
 
-                        <li class="flex items-start">
-                            <svg class="mr-2 mt-0.5 h-5 w-5 text-sky-500"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M5 13l4 4L19 7">
-                                </path>
-                            </svg>
-
+                        <div class="flex items-center gap-3">
+                            <div class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-sky-100 text-sky-700">
+                                <i class="fas fa-check text-xs"></i>
+                            </div>
                             <span class="text-gray-700">
                                 Informasi promo, event dan kegiatan terbaru.
                             </span>
-                        </li>
+                        </div>
 
-                        <li class="flex items-start">
-                            <svg class="mr-2 mt-0.5 h-5 w-5 text-sky-500"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M5 13l4 4L19 7">
-                                </path>
-                            </svg>
-
+                        <div class="flex items-center gap-3">
+                            <div class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-sky-100 text-sky-700">
+                                <i class="fas fa-check text-xs"></i>
+                            </div>
                             <span class="text-gray-700">
                                 Pengumuman penting untuk seluruh mitra.
                             </span>
-                        </li>
+                        </div>
 
-                        <li class="flex items-start">
-                            <svg class="mr-2 mt-0.5 h-5 w-5 text-sky-500"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M5 13l4 4L19 7">
-                                </path>
-                            </svg>
-
+                        <div class="flex items-center gap-3">
+                            <div class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-sky-100 text-sky-700">
+                                <i class="fas fa-check text-xs"></i>
+                            </div>
                             <span class="text-gray-700">
                                 Wawasan bisnis dan perkembangan usaha terkini.
                             </span>
-                        </li>
+                        </div>
 
-                    </ul>
+                    </div>
                 </div>
             </div>
 
@@ -1980,7 +2064,7 @@
 
         <!-- FITUR -->
         <div x-show="activeTab === 'features'"
-            class="space-y-4">
+             class="space-y-4">
 
             <h4 class="mb-3 font-semibold text-sky-700">
                 Sub Fitur Informasi:
@@ -1989,32 +2073,16 @@
             <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
 
                 <template x-for="feature in appData.informasi.features">
-
                     <div class="rounded-lg bg-white p-4 shadow-md">
-
                         <div class="flex items-center">
-
-                            <div class="mr-3 rounded-md bg-sky-100 p-2">
-                                <svg class="h-5 w-5 text-sky-600"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24">
-                                    <path stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0">
-                                    </path>
-                                </svg>
+                            <div class="mr-3 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sky-100 text-sky-700">
+                                <i class="fas fa-check text-xs"></i>
                             </div>
-
                             <h5 class="font-medium text-gray-800"
                                 x-text="feature">
                             </h5>
-
                         </div>
-
                     </div>
-
                 </template>
 
             </div>
@@ -2022,41 +2090,33 @@
 
         <!-- DEMO -->
         <div x-show="activeTab === 'demo'"
-            class="flex flex-col items-center">
+             class="flex flex-col items-center">
 
             <div class="w-full max-w-3xl rounded-lg bg-white p-6 shadow-lg">
-
                 <h4 class="mb-4 text-center font-semibold text-sky-700">
                     Demo Informasi
                 </h4>
 
                 <div class="overflow-hidden rounded-xl">
-
-                    <iframe
-                        class="h-[450px] w-full rounded-xl"
+                    <iframe class="h-[220px] w-full md:h-[450px]"
                         src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
                         title="Demo Informasi"
                         frameborder="0"
                         allowfullscreen>
                     </iframe>
-
                 </div>
 
                 <p class="mt-4 text-center text-gray-600">
                     Video demonstrasi fitur Informasi Kedai Indonesia.
                 </p>
-
             </div>
         </div>
 
         <!-- BUTTON -->
         <div class="mt-8 text-center">
-
             <a href="#"
                 class="inline-flex items-center rounded-lg bg-sky-600 px-6 py-3 font-medium text-white transition hover:bg-sky-700">
-
                 Lihat Informasi Terbaru
-
                 <svg class="ml-2 h-5 w-5"
                     fill="none"
                     stroke="currentColor"
@@ -2067,13 +2127,10 @@
                         d="M14 5l7 7m0 0l-7 7m7-7H3">
                     </path>
                 </svg>
-
             </a>
-
         </div>
 
     </div>
-
 </div>
         <!-- <div class="flex items-center justify-center">
             <img src="{{ asset('storage/assets_images/images/informasi.png') }}"
